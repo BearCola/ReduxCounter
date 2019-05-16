@@ -24,10 +24,10 @@ export function getRandomColor() {
     return colors[random];
 }
 
-const mapStateToProps = (state) => ({
-    color: state.color, 
-    number: state.number
-})
+const mapStateToProps = state => ({
+    color: state.colorData.color,
+    number: state.numberData.number
+});
 
 const mapDispatchToProps = dispatch => ({
     onIncrement: () => dispatch(actions.increment()),
@@ -41,6 +41,6 @@ const mapDispatchToProps = dispatch => ({
 const CounterContainer = connect(
     mapStateToProps,
     mapDispatchToProps
-)(Counter)
+)(Counter);
 
 export default CounterContainer;
